@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+
+    <div id="app">
+        <h1>Ciao {{ username }}</h1>
+        <button @click="generateWord">Genera parola random</button>
+
+        <h2>{{ randomWord }}</h2>
+
+        <hr>
+
+        <label for="items">Quanti numeri</label>
+        <input type="number" id="items" v-model="items">
+
+
+        <label for="min">Minimo</label>
+        <input type="number" id="min" v-model="min">
+
+        <label for="max">Massimo</label>
+        <input type="number" id="max" v-model="max">
+
+        <button @click="generateNumbers">Genera numeri</button>
+
+        <div>
+            <h3>Numeri generati:</h3>
+            <ul>
+                <li v-for="num in numbers">{{ num }}</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Custom script -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
